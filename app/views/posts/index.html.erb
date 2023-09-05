@@ -6,11 +6,11 @@
       <h2><%= post.title %></h2>
       <p><%= post.content %></p>
       <span>
-        <small><%= post.created_at.to_s(:datetime_jp) %></small>
+        <small><%= l post.created_at %></small>
       </span>
       <div class = "edit-delete-wrapper"> 
-      <%# <%= link_to "編集", edit_post_path(post), class: "link-button" %>
-      <%# <%= button_to "削除", post_path(post), method: :delete, class: "link-delete-button" %> 
+      <%= link_to "編集", edit_post_path(post), class: "link-button" %>
+      <%= button_to "削除", post_path(post), method: :delete, class: "link-delete-button" %> 
       </div>
     </li>
   <% end %>
