@@ -11,13 +11,12 @@
   </head>
 
   <body>
-   
+
         <header class="header">
-     <div class="inner">
-   
+      <div class="inner">
         <div class="nav">
           <div class="nav__left">
-            <%= link_to image_tag("logo.png", class: :logo), root_path %>
+            <%= link_to image_tag("logo.png", class: :logo), root_path %> 
           </div>
           <% if user_signed_in? %>
             <div class="nav__right">
@@ -33,6 +32,9 @@
         </div>
       </div>
       </header> 
+      
       <%= yield %>
+
+    
   </body>
 </html>

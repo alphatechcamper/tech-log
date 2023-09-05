@@ -4,19 +4,23 @@
   padding: 5px 0;
 
 }
+
 .inner {
   width: 1024px;
   margin: 0 auto;
 }
+
 .nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
+
 .logo {
   width: 140px;
   padding-top: 5px;
 }
+
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -28,6 +32,7 @@
   border-radius: 3px;
   transition: 0.4s ease;
 }
+
 .nav__btn:hover{
   color: #fff;
   background: #87CEFA;
@@ -41,6 +46,7 @@
   text-decoration: none;
   user-select: none;
 }
+
 .nav__logout:hover{
   opacity: 0.5;
 }
@@ -147,3 +153,8 @@ ul li p {
   margin-top: 10px;
 }
 
+.sidebar {
+  width: 250px; /* サイドバーの幅を調整 */
+  background-color: #ffeded27; /* サイドバーの背景色を設定 */
+
+}
