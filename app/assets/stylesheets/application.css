@@ -176,3 +176,36 @@ ul li p {
   font-size: 15px; /* フォントサイズを変更 */
   color: rgb(255, 255, 255); /* テキストの色を赤に変更 */
 }
+
+.report {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.report-title {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.report-content {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.report-meta {
+  margin-top: 10px;
+  text-align: right;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #0077cc;
+}
