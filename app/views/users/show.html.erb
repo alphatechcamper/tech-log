@@ -1,0 +1,13 @@
+<div class="contents row">
+  <p><%= current_user.nickname %>さんの投稿一覧</p>
+  <% @posts.each do |post| %>
+    <div class="content_post">
+      <p><%= post.title %></p>
+      <span class="name"><%= post.content %></span>
+    </div>
+  <% end %>
+
+  <footer>
+      <a href="/">戻る</a>
+    </footer>
+</div>
