@@ -1,1 +1,19 @@
-aaaaa
+
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <h2><%= post.title %></h2>
+      <p><%= post.content %></p>
+      <span>
+        <small><%= l post.created_at %></small>
+      </span>
+      
+      <div class = "edit-delete-wrapper"> 
+      <%= link_to "詳細", post_path(post), class: "link-show-button" %>
+      <%= link_to "編集", edit_post_path(post), class: "link-button" %>
+      <%= button_to "削除", post_path(post), method: :delete, class: "link-delete-button" %> 
+      </div>
+    </li>
+  <% end %>
+</ul>
