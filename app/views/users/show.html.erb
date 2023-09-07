@@ -1,13 +1,21 @@
-<div class="contents row">
-  <p><%= current_user.nickname %>さんの投稿一覧</p>
+<div class="user-profile">
+  <% if @user.present? %>
+    <p><%= current_user.nickname %>さんの投稿一覧</p>
+  <% end %>
+
+  <div class="user-posts">
   <% @posts.each do |post| %>
-    <div class="content_post">
+   <div class="post">
       <p><%= post.title %></p>
-      <span class="name"><%= post.content %></span>
+      <p><%= post.content %></p>
+      <span class="post-date"><%= l post.created_at %></span>
     </div>
   <% end %>
 
   <footer>
       <a href="/">戻る</a>
-    </footer>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </div>

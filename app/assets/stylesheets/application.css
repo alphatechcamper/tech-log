@@ -209,3 +209,40 @@ a {
   text-decoration: none;
   color: #0077cc;
 }
+
+.user-posts .post {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.user-posts .post h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.user-posts .post p {
+  font-size: 16px;
+}
+
+
+.link-delete-button:hover {
+  background-color: #fb8888; /* ホバー時の背景色 */
+  color: #fff; /* ホバー時のテキスト色 */
+  box-shadow: 0 0 10px rgba(255, 122, 105, 0.5); /* ホバー時のボックスシャドウ */
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* トランジション効果を追加 */
+}
+
+.link-button:hover {
+  background-color: #a6b3f0; /* ホバー時の背景色 */
+  color: #fff; /* ホバー時のテキスト色 */
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); /* ホバー時のボックスシャドウ */
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* トランジション効果を追加 */
+}
+
+.link-show-button:hover {
+  background-color: #9ded73; /* ホバー時の背景色 */
+  color: #fff; /* ホバー時のテキスト色 */
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); /* ホバー時のボックスシャドウ */
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* トランジション効果を追加 */
+}
