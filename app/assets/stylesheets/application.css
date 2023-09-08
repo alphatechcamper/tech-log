@@ -246,3 +246,27 @@ a {
   box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); /* ホバー時のボックスシャドウ */
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* トランジション効果を追加 */
 }
+
+.search-form {
+  display: flex;
+  justify-content: center; /* ボタンを水平方向に中央揃えにする */
+}
+
+.search-input {
+  /* テキストフィールドのスタイルを追加 */
+  /* 任意のスタイルを追加できます */
+}
+
+.search-btn {
+  /* ボタンのスタイルを追加 */
+  /* 任意のスタイルを追加できます */
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
