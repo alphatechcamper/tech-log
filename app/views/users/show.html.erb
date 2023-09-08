@@ -5,11 +5,7 @@
 
   <div class="user-posts">
   <% @posts.each do |post| %>
-   <div class="post">
-      <p><%= post.title %></p>
-      <p><%= post.content %></p>
-      <span class="post-date"><%= l post.created_at %></span>
-    </div>
+  <%= render partial: "post", locals: { post: post } %>
   <% end %>
 
   <footer>

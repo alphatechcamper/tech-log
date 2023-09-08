@@ -1,0 +1,18 @@
+ <li>
+      <h2><%= post.title %></h2>
+      <span>
+        <small>
+         投稿者: <%= post.user.present? ? link_to(post.user.nickname, user_path(post.user)) : "不明" %><br>
+          <%= l post.created_at %>
+        </small>
+      </span>
+        <div class="edit-delete-wrapper"> 
+          <%= link_to "詳細", post_path(post.id), class: "link-show-button" %>
+          
+           <% if user_signed_in? && current_user.id == post.user_id %>
+          <%= link_to "編集", edit_post_path(post.id), class: "link-button" %>
+          <%= button_to "削除", post_path(post.id), method: :delete, class: "link-delete-button" %> 
+        </div>
+      <% end %>
+      
+    </li>
