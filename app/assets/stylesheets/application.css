@@ -1,3 +1,5 @@
+/* ヘッダー */
+
 .header {
   background-color: #484848;
   margin-bottom: 48px;
@@ -50,6 +52,8 @@
 .nav__logout:hover{
   opacity: 0.5;
 }
+
+/* ボディー */
 
 
 body {
@@ -166,13 +170,235 @@ ul li p {
   margin-top: 10px;
 }
 
-.sidebar {
-  width: 250px; /* サイドバーの幅を調整 */
-  background-color: #ffeded27; /* サイドバーの背景色を設定 */
-
-}
 
 .user-nickname {
   font-size: 15px; /* フォントサイズを変更 */
   color: rgb(255, 255, 255); /* テキストの色を赤に変更 */
 }
+
+/* レポート投稿 */
+
+.report {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.report-title {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.report-content {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.report-meta {
+  margin-top: 10px;
+  text-align: right;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+.user-posts .post {
+  background-color: #f0f0f0;
+  padding: 100px;
+  margin-bottom: 10px;
+}
+
+.user-posts .post h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.user-posts .post p {
+  font-size: 16px;
+}
+
+/* ボタン */
+
+.link-delete-button:hover {
+  background-color: #fb8888; /* ホバー時の背景色 */
+  color: #fff; /* ホバー時のテキスト色 */
+  box-shadow: 0 0 10px rgba(255, 122, 105, 0.5); /* ホバー時のボックスシャドウ */
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* トランジション効果を追加 */
+}
+
+.link-button:hover {
+  background-color: #a6b3f0; /* ホバー時の背景色 */
+  color: #fff; /* ホバー時のテキスト色 */
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); /* ホバー時のボックスシャドウ */
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* トランジション効果を追加 */
+}
+
+.link-show-button:hover {
+  background-color: #9ded73; /* ホバー時の背景色 */
+  color: #fff; /* ホバー時のテキスト色 */
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); /* ホバー時のボックスシャドウ */
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* トランジション効果を追加 */
+}
+
+/* 検索フォーム */
+
+.search-form {
+  display: flex;
+  justify-content: center; /* ボタンを水平方向に中央揃えにする */
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* フッター */
+
+.footer-text {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(51, 51, 51, 0.5);
+  color: #fff; /* テキストのカラーを設定 */
+  text-align: center; /* テキストを中央揃えに設定 */
+  padding: 5px; /* 必要に応じて余白を設定 */
+  opacity: 0.5;
+}
+
+
+
+/* ハンバーガーメニュー */
+
+.body_2 {
+  font-weight: 400;
+}
+
+
+nav {
+  display: block;
+  position: fixed;
+  background-color: #ffffff;
+  width: 220px;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  transition: all 0.5s;
+  z-index: 3;
+  opacity: 0;
+}
+
+.open nav {
+  left: 0;
+  opacity: 1;
+}
+
+nav .inner_top {
+  padding: 25px;
+}
+
+nav .inner ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav .inner ul li {
+  margin: 0;
+  border-bottom: 1px solid #333;
+}
+
+nav .inner ul li a {
+  display: block;
+  color: #333;
+  font-size: 14px;
+  padding: 1rem;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+nav .inner ul li a:hover {
+  background: #e4e4e4c3;
+}
+
+.toggle-btn {
+  display: block;
+  position: fixed;
+  top: 5px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.toggle-btn span {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #9efea5;
+  transition: all 0.5s;
+  border-radius: 4px;
+}
+
+.toggle-btn span:nth-child(1) {
+  top: 4px;
+}
+.toggle-btn span:nth-child(2) {
+  top: 14px;
+}
+.toggle-btn span:nth-child(3) {
+  bottom: 4px;
+}
+
+.open .toggle-btn span {
+  background-color: #fff;
+}
+
+.open .toggle-btn span:nth-child(1) {
+  transform: translateY(10px) rotate(-315deg);
+}
+
+.open .toggle-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.open .toggle-btn span:nth-child(3) {
+  transform: translateY(-10px) rotate(315deg);
+}
+
+/* ハンバーガーメニューが開いた時 */
+
+#mask {
+  display: none;
+  transition: all 0.5s;
+}
+
+.open #mask {
+  display: block;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  opacity: 0.8;
+  z-index: 2;
+  cursor: pointer;
+}
+
+
+

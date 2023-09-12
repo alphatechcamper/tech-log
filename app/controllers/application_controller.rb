@@ -10,6 +10,9 @@ class ApplicationController < ActionController::Base
   def index
   end
 
+  def revert_check
+    Check.find_by(user_id: current_user.id).destroy
+  end
 
   private
 

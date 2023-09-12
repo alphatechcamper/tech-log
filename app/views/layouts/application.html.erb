@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+
+  
 
         <header class="header">
       <div class="inner">
@@ -21,7 +22,7 @@
           <% if user_signed_in? %>
             <div class="nav__right">
             <%= content_tag :span, "#{current_user.nickname}さん", class: "user-nickname" %>
-
+              <%= link_to "マイページ", "/users/#{current_user.id}" %>
               <%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout, data: {turbo_method: :delete} %>
               <%= link_to "新規投稿", new_post_path, class: :nav__btn %>
             </div>
@@ -37,6 +38,9 @@
       
       <%= yield %>
 
+    <div class="footer-text">
+        ©︎ alphatechcamper 2023
+    </div>
     
   </body>
 </html>

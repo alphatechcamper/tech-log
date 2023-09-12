@@ -1,19 +1,39 @@
+<div class="body_2"> 
+  <div id="navArea">
+      <nav>
+        <div class="inner_top">
+          <ul>
+            <li><a href="#">aaa</a></li>
+            <li><a href="#">aaa</a></li>
+            <li><a href="#">aaaa</a></li>
+          </ul>
+        </div>
+      </nav>
 
+      <div class="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div id="mask"></div>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+
+
+<%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+  <%= form.submit "検索", class: "search-btn" %>
+<% end %>
 
 <ul>
   <% @posts.each do |post| %>
-    <li>
-      <h2><%= post.title %></h2>
-      <p><%= post.content %></p>
-      <span>
-        <small><%= l post.created_at %></small>
-      </span>
-      
-      <div class = "edit-delete-wrapper"> 
-      <%= link_to "詳細", post_path(post), class: "link-show-button" %>
-      <%= link_to "編集", edit_post_path(post), class: "link-button" %>
-      <%= button_to "削除", post_path(post), method: :delete, class: "link-delete-button" %> 
-      </div>
-    </li>
+    <%= render partial: "post", locals: { post: post } %>
   <% end %>
 </ul>
+
+
+
+

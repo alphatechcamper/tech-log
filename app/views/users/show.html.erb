@@ -1,0 +1,17 @@
+<div class="user-profile">
+  <% if @user.present? %>
+    <p><%= current_user.nickname %>さんの投稿一覧</p>
+  <% end %>
+
+  <div class="user-posts">
+  <% @posts.each do |post| %>
+  <%= render partial: "posts/post", locals: { post: post } %>
+  <% end %>
+
+  <footer>
+      <a href="/">戻る</a>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</div>
