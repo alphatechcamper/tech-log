@@ -3,9 +3,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :destroy, :show]
   before_action :move_to_index, except: [:index, :show, :search]
 
-  
   def index
-    @posts = Post.includes(:user).order("created_at DESC")
+    @posts = Post.includes(:user).order('created_at DESC')
   end
 
   def new
@@ -15,7 +14,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-     
+
       redirect_to posts_path
     else
       render :new
@@ -26,13 +25,11 @@ class PostsController < ApplicationController
   end
 
   def update
-
     if @post.update(post_params)
       redirect_to posts_path
     else
       render :edit
     end
-
   end
 
   def destroy
@@ -60,9 +57,8 @@ class PostsController < ApplicationController
   end
 
   def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
-  end
+    return if user_signed_in?
 
+    redirect_to action: :index
+  end
 end
