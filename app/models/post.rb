@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   validates :title, presence: true
   validates :content, presence: true
+  has_many :likes
 
   def self.search(search)
     if search != ''

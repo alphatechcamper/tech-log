@@ -4,4 +4,5 @@ class User < ApplicationRecord
 
   has_many :posts
   validates :nickname, presence: true, length: { maximum: 6 }
+  has_many :likes
 end
