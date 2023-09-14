@@ -11,19 +11,15 @@
 
   <body>
 
-  
-
-     <header class="header">
-        <div class="body-second"> 
+   <div class="body-second"> 
            <div id="navArea">
              <nav>
-               <div class="inner_top">
-                <ul>
-                  <li><a href="#">aaa</a></li>
-                  <li><a href="#">aaa</a></li>
-                  <li><a href="#">aaaa</a></li>
-                </ul>
-              </div>
+                <ul class="style-1">
+                 <li><%= link_to "学習開始レポート", new_post_path(Type1: '学習開始レポート') %></li>
+                 <li><%= link_to "アウトプットレポート", new_post_path(type2: 'アウトプットレポート') %></li>
+                 <li><%= link_to "タスクレポート", new_post_path %></li>
+                 <li><%= link_to "振り返りレポート", new_post_path %></li>                
+                 </ul>
              </nav>
 
          <div class="toggle-btn">
@@ -35,6 +31,8 @@
       <div id="mask"></div>
       </div>
     </div>
+
+     <header class="header">
       <div class="inner">
         <div class="nav">
           <div class="nav__left">
