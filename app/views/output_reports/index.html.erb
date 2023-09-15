@@ -1,20 +1,20 @@
-<li>
-  <h2><%= output_report.title %></h2>
-  <span>
-    <small>
-      投稿者: <%= output_report.user.present? ? link_to(output_report.user.nickname, user_path(output_report.user)) : "不明" %><br>
-      <%= l output_report.created_at %>
-    </small>
-  </span>
-  <div id="like-btn<%= output_report.id %>">
-    <%= render partial: "likes/like", locals: { output_report: output_report } %>
-  </div>
-  <div class="edit-delete-wrapper">
-    <%= link_to "詳細", output_report_path(output_report.id), class: "link-show-button" %>
-
-    <% if user_signed_in? && current_user.id == output_report.user_id %>
-      <%= link_to "編集", edit_output_report_path(output_report.id), class: "link-button" %>
-      <%= button_to "削除", output_report_path(output_report.id), { method: :delete, class: "link-delete-button", data: { turbo_confirm: "本当に削除しますか？" } }  %>
-    <% end %>
-  </div>
-</li>
+<% @reports.each do |output_report| %>
+  <li>
+    <h2><%= output_report.title %></h2>
+    <span>
+      <small>
+        投稿者: <%= output_report.user.present? ? link_to(output_report.user.nickname, user_path(output_report.user)) : "不明" %><br>
+        <%= l output_report.created_at %>
+      </small>
+    </span>
+  
+    <div class="edit-delete-wrapper"> 
+      <%= link_to "詳細", output_report_path(output_report.id), class: "link-show-button" %>
+      
+      <% if user_signed_in? && current_user.id == output_report.user_id %>
+        <%= link_to "編集", edit_output_report_path(output_report.id), class: "link-button" %>
+        <%= button_to "削除", output_report_path(output_report.id), { method: :delete, class: "link-delete-button", data: { turbo_confirm: "本当に削除しますか？" } }  %> 
+      <% end %>
+    </div>
+  </li>
+<% end %>
