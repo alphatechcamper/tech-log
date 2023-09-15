@@ -34,6 +34,9 @@ class PostsController < ApplicationController
 
   def destroy
     post = Post.find(params[:id])
+    post.likes.destroy_all
+
+  # Post レコードを削除
     @post.destroy
     redirect_to posts_path
   end
@@ -46,30 +49,7 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:keyword])
   end
 
-  def type1_new
-    @post = Post.new(type: 'Type1')
-  end
-
-  def type1_create
-    @post = Post.new(post_params.merge(type: 'Type1'))
-    if @post.save
-      redirect_to posts_path
-    else
-      render :type1_new
-    end
-  end
-
-  def type1_edit
-    # Type 1 投稿編集フォーム
-  end
-
-  def type1_update
-    if @post.update(post_params)
-      redirect_to posts_path
-    else
-      render :type1_edit
-    end
-  end
+  
 
   private
 
