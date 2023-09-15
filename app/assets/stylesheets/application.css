@@ -53,7 +53,7 @@
   opacity: 0.5;
 }
 
-/* ボディー */
+/* メインページ */
 
 
 body {
@@ -73,7 +73,7 @@ h1 {
   padding: 20px 0;
 }
 
-ul {
+ ul {
   list-style: none;
   padding: 0;
   margin: 0 30%;
@@ -81,11 +81,10 @@ ul {
 }
 
 ul li {
-  background-color: #fff;
+  background-color: #ffffffd3;
   border: 1px solid #ced4da;
   margin-bottom: 10px;
   padding: 20px;
-  
 }
 
 ul li h2 {
@@ -127,6 +126,8 @@ ul li p {
   border: 1px solid #ddd;
   border-radius: 5px;
 }
+
+/* リンクボタンの色 */
 
 .link-button {
   display: inline-block;
@@ -176,7 +177,7 @@ ul li p {
   color: rgb(255, 255, 255); /* テキストの色を赤に変更 */
 }
 
-/* レポート投稿 */
+/* レポート詳細 */
 
 .report {
   border: 1px solid #ccc;
@@ -208,25 +209,19 @@ footer {
 
 a {
   text-decoration: none;
-  color: #0077cc;
+  color: #008aec;
 }
 
-.user-posts .post {
-  background-color: #f0f0f0;
-  padding: 100px;
-  margin-bottom: 10px;
+/* マイページ詳細 */
+
+.user-posts {
+  list-style: none;
+  background-color: #e3dddd;
 }
 
-.user-posts .post h2 {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
 
-.user-posts .post p {
-  font-size: 16px;
-}
 
-/* ボタン */
+/* ボタンにカーソルがあたったとき */
 
 .link-delete-button:hover {
   background-color: #fb8888; /* ホバー時の背景色 */
@@ -281,7 +276,7 @@ a {
 
 /* ハンバーガーメニュー */
 
-.body_2 {
+.body-second {
   font-weight: 400;
 }
 
@@ -304,31 +299,31 @@ nav {
   opacity: 1;
 }
 
-nav .inner_top {
+/* .inner_top {
   padding: 25px;
-}
+} */
 
-nav .inner ul {
+.style-1 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-nav .inner ul li {
+.style-1 li {
   margin: 0;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #000000;
 }
 
-nav .inner ul li a {
+.style-1 li a {
   display: block;
-  color: #333;
+  color: #373434;
   font-size: 14px;
   padding: 1rem;
   text-decoration: none;
   transition-duration: 0.2s;
 }
 
-nav .inner ul li a:hover {
+.style-1 li a:hover {
   background: #e4e4e4c3;
 }
 
@@ -349,7 +344,7 @@ nav .inner ul li a:hover {
   left: 0;
   width: 30px;
   height: 2px;
-  background-color: #9efea5;
+  background-color: #f05811;
   transition: all 0.5s;
   border-radius: 4px;
 }

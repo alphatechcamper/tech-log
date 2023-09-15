@@ -11,9 +11,28 @@
 
   <body>
 
-  
+   <div class="body-second"> 
+           <div id="navArea">
+             <nav>
+                <ul class="style-1">
+                 <li><%= link_to "学習開始レポート", new_post_path(Type1: '学習開始レポート') %></li>
+                 <li><%= link_to "アウトプットレポート", new_post_path(type2: 'アウトプットレポート') %></li>
+                 <li><%= link_to "タスクレポート", new_post_path %></li>
+                 <li><%= link_to "振り返りレポート", new_post_path %></li>                
+                 </ul>
+             </nav>
 
-        <header class="header">
+         <div class="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+        </div>
+
+      <div id="mask"></div>
+      </div>
+    </div>
+
+     <header class="header">
       <div class="inner">
         <div class="nav">
           <div class="nav__left">
@@ -41,6 +60,8 @@
     <div class="footer-text">
         ©︎ alphatechcamper 2023
     </div>
+
+     <script src="script.js"></script>
     
   </body>
 </html>

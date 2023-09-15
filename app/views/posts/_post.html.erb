@@ -6,6 +6,9 @@
           <%= l post.created_at %>
         </small>
       </span>
+      <div id="like-btn<%= post.id %>">
+        <%= render partial: "likes/like", locals: { post: post } %>
+      </div>
         <div class="edit-delete-wrapper"> 
           <%= link_to "詳細", post_path(post.id), class: "link-show-button" %>
           
@@ -14,5 +17,7 @@
           <%= button_to "削除", post_path(post.id), { method: :delete, class: "link-delete-button",data: { turbo_confirm: "本当に削除しますか？" } }  %> 
         </div>
       <% end %>
+
+       
       
     </li>
