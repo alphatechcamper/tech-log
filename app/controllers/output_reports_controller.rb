@@ -15,7 +15,7 @@ class OutputReportsController < ApplicationController
     @report = OutputReport.new(report_params)
     if @report.save
 
-      redirect_to posts_path
+      redirect_to output_reports_path
     else
       render :new
     end
@@ -26,7 +26,7 @@ class OutputReportsController < ApplicationController
 
   def update
     if @report.update(report_params)
-      redirect_to posts_path
+      redirect_to output_reports_path
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class OutputReportsController < ApplicationController
   def destroy
     report = OutputReport.find(params[:id])
     @report.destroy
-    redirect_to posts_path
+    redirect_to output_reports_path
   end
 
   def show
