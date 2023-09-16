@@ -80,15 +80,28 @@ https://docs.google.com/spreadsheets/d/14NEfg3wG5ntr50AQCeko_iebIFkQfK8FhO-3KLGg
 ### Association
 
 - has_many :posts
+- has_many :output_reports
 
 ## posts テーブル
 
-| Column                 | Type        | 
-| ------------------     | -------     | 
-| title                  | string      |
-| content                | text        |
-| user_id                | integer     |
+| Column                 | Type        | Options                        | 
+| ------------------     | -------     | ------------------------------ |
+| title                  | string      | null:false                     |
+| content                | text        | null:false                     |
+| user_id                | integer     |                                |
 
+
+### Association
+
+- belongs_to :user
+
+## output_reports テーブル
+
+| Column                 | Type        | Options                        |
+| ------------------     | -------     | ------------------------------ |
+| title                  | string      | null:false                     |
+| content                | text        | null:false                     |
+| user_id                | references  | null: false, foreign_key: true |
 
 ### Association
 
