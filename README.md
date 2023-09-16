@@ -57,7 +57,7 @@ https://docs.google.com/spreadsheets/d/14NEfg3wG5ntr50AQCeko_iebIFkQfK8FhO-3KLGg
 [![Image from Gyazo](https://i.gyazo.com/506bb4fc216bdc025f1f6b895d83a690.png)](https://gyazo.com/506bb4fc216bdc025f1f6b895d83a690)
 
 # 開発環境
-・フロントエンド<br>
+・フロントエンド(HTML,CSS,JavaScript)<br>
 ・バックエンド(Ruby(7.0.0)/Ruby on Rails)<br>
 ・テキストエディタ (Visual Studio Code)
 
@@ -80,15 +80,28 @@ https://docs.google.com/spreadsheets/d/14NEfg3wG5ntr50AQCeko_iebIFkQfK8FhO-3KLGg
 ### Association
 
 - has_many :posts
+- has_many :output_reports
 
 ## posts テーブル
 
-| Column                 | Type        | 
-| ------------------     | -------     | 
-| title                  | string      |
-| content                | text        |
-| user_id                | integer     |
+| Column                 | Type        | Options                        | 
+| ------------------     | -------     | ------------------------------ |
+| title                  | string      | null:false                     |
+| content                | text        | null:false                     |
+| user_id                | integer     |                                |
 
+
+### Association
+
+- belongs_to :user
+
+## output_reports テーブル
+
+| Column                 | Type        | Options                        |
+| ------------------     | -------     | ------------------------------ |
+| title                  | string      | null:false                     |
+| content                | text        | null:false                     |
+| user_id                | references  | null: false, foreign_key: true |
 
 ### Association
 
