@@ -11,7 +11,7 @@
 
 
 # URL
-現在開発途中です。
+https://tech-log.onrender.com
 
 
 
