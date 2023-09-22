@@ -1,0 +1,44 @@
+/* トップページのスタイル */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  color: #555;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+/* カテゴリ要素のスタイル */
+.report-category {
+  border: none; /* ボーダーを削除 */
+  background-color: #0078f9; /* ボタンの背景色 */
+  color: #fff; /* ボタンのテキスト色 */
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: center; /* テキストを中央寄せ */
+  cursor: pointer; /* マウスカーソルをポインタに変更 */
+  transition: background-color 0.3s; /* ホバー時のアニメーション */
+}
+
+/* ホバー時のスタイル */
+.report-category:hover {
+  background-color: #6eb3fc; /* ホバー時の背景色 */
+}
+
+
+.category-container {
+  display: flex; /* フレックスボックスコンテナとして表示 */
+  justify-content: space-between; /* 要素を等間隔で配置 */
+}
