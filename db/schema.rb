@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_15_075704) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_23_141258) do
+  create_table "back_reports", charset: "utf8", force: :cascade do |t|
+    t.float "study_hours", null: false
+    t.text "successes", null: false
+    t.text "improvements", null: false
+    t.text "learning_tips", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_back_reports_on_user_id"
+  end
+
   create_table "likes", charset: "utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "post_id"
@@ -51,6 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_15_075704) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "back_reports", "users"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "output_reports", "users"

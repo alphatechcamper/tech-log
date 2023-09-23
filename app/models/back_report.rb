@@ -1,0 +1,2 @@
+class BackReport < ApplicationRecord
+end
