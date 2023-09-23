@@ -1,6 +1,6 @@
 class BackReportsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_report, only: [:edit, :update, :destroy, :show]
+  before_action :set_back_report, only: [:edit, :update, :destroy, :show]
   before_action :move_to_index, except: [:index, :show, :search]
 
   def index
@@ -8,14 +8,15 @@ class BackReportsController < ApplicationController
   end
 
   def new
-    @report = OutputReport.new
+    @back_report = BackReport.new
   end
 
   def create
-    @report = OutputReport.new(report_params)
-    if @report.save
+    
+    @back_report = BackReport.new(back_report_params)
+    if @back_report.save
 
-      redirect_to output_reports_path
+      redirect_to back_reports_path
     else
       render :new
     end
@@ -25,31 +26,36 @@ class BackReportsController < ApplicationController
   end
 
   def update
-    if @report.update(report_params)
-      redirect_to output_reports_path
+    if @back_report.update(back_report_params)
+      redirect_to back_reports_path
     else
       render :edit
     end
   end
 
   def destroy
-    report = OutputReport.find(params[:id])
-    @report.destroy
-    redirect_to output_reports_path
+    back_report =  BackReport.find(params[:id])
+    @back_report.destroy
+    redirect_to back_reports_path
   end
 
   def show
-    @report = OutputReport.find(params[:id])
+    @back_report =  BackReport.find(params[:id])
   end
 
   def search
-    @reports = Outputreport.search(params[:keyword])
+    @back_reports =  BackReport.search(params[:keyword])
   end
 
   private
 
   def back_report_params
-    params.require(:back_report).permit(:study_hours, :successes, :improvements, :learning_tips)
+    params.require(:back_report).permit(:study_hours, :successes, 
+                                        :improvements, :learning_tips).merge(user_id: current_user.id)
+  end
+
+  def set_back_report
+    @back_report = BackReport.find(params[:id])
   end
 
   def move_to_index
