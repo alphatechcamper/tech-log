@@ -1,49 +1,60 @@
 class BackReportsController < ApplicationController
-  before_action :authenticate_user! # ログイン済みのユーザーのみアクセス可能にする例
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_report, only: [:edit, :update, :destroy, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-    @back_reports = current_user.back_reports
+    @back_reports = BackReport.includes(:user).order('created_at DESC')
   end
 
   def new
-    @back_report = current_user.back_reports.build
+    @report = OutputReport.new
   end
 
   def create
-    @back_report = current_user.back_reports.build(back_report_params)
-    if @back_report.save
-      redirect_to back_reports_path, notice: "振り返りレポートを投稿しました。"
+    @report = OutputReport.new(report_params)
+    if @report.save
+
+      redirect_to output_reports_path
     else
       render :new
     end
   end
 
-  def show
-    @back_report = BackReport.find(params[:id])
-  end
-
   def edit
-    @back_report = BackReport.find(params[:id])
   end
 
   def update
-    @back_report = BackReport.find(params[:id])
-    if @back_report.update(back_report_params)
-      redirect_to back_report_path(@back_report), notice: "振り返りレポートを更新しました。"
+    if @report.update(report_params)
+      redirect_to output_reports_path
     else
       render :edit
     end
   end
 
   def destroy
-    @back_report = BackReport.find(params[:id])
-    @back_report.destroy
-    redirect_to back_reports_path, notice: "振り返りレポートを削除しました。"
+    report = OutputReport.find(params[:id])
+    @report.destroy
+    redirect_to output_reports_path
+  end
+
+  def show
+    @report = OutputReport.find(params[:id])
+  end
+
+  def search
+    @reports = Outputreport.search(params[:keyword])
   end
 
   private
 
   def back_report_params
     params.require(:back_report).permit(:study_hours, :successes, :improvements, :learning_tips)
+  end
+
+  def move_to_index
+    return if user_signed_in?
+
+    redirect_to action: :index
   end
 end
