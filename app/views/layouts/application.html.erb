@@ -44,7 +44,7 @@
             <%= content_tag :span, "#{current_user.nickname}さん", class: "user-nickname" %>
               <%= link_to "マイページ", "/users/#{current_user.id}" %>
               <%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout, data: {turbo_method: :delete} %>
-              <%= link_to "新規投稿", new_post_path, class: :nav__btn %>
+              
             </div>
           <% else %>
             <div class="nav__right">
