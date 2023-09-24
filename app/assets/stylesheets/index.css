@@ -1,7 +1,7 @@
 /* トップページのスタイル */
 
-h2 {
-  color: #fbfbfb;
+.h2-style1 {
+  color: #fdfbfb;
 }
 
 a {
@@ -16,7 +16,7 @@ a {
   color: #fff; /* ボタンのテキスト色 */
   width: 270px; /* ボタンの幅を固定サイズに設定 */
   height: 70px; /* ボタンの高さを固定サイズに設定 */
-  margin: 10px;
+  margin: 3px 10px;
   border-radius: 5px;
   text-align: center; /* テキストを中央寄せ */
   cursor: pointer; /* マウスカーソルをポインタに変更 */

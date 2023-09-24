@@ -1,5 +1,5 @@
  <li>
-      <h2><%= post.title %></h2>
+      <h2><%= post.content %></h2>
       <span>
         <small>
          投稿者: <%= post.user.present? ? link_to(post.user.nickname, user_path(post.user)) : "不明" %><br>
