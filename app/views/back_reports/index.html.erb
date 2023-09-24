@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag 'output_reports.css', media: 'all' %>
+<%= stylesheet_link_tag 'back_report.css', media: 'all' %>
 
 <h1>振り返りレポート一覧</h1>
 
@@ -6,9 +6,13 @@
   <% @back_reports.each do |back_report| %>
     <li class="report-summary">
       <h2>勉強時間: <%= back_report.study_hours %> 時間</h2>
-      <p>うまくいったこと: <%= truncate(back_report.successes, length: 100) %></p>
-      <p>改善したいこと: <%= truncate(back_report.improvements, length: 100) %></p>
-      <p>学習をよりよくする方法: <%= truncate(back_report.learning_tips, length: 100) %></p>
+      <p>【うまくいったこと】</p>
+        <p> <%= truncate(back_report.successes, length: 10) %></p>
+      <p>【改善したいこと】</p>
+        <p><%= truncate(back_report.improvements, length: 10) %></p>
+      <p>
+      <p>【学習をよりよくする方法】</p> 
+        <p><%= truncate(back_report.learning_tips, length: 10) %></p>
       <span>
         <small>
           投稿者: <%= back_report.user.present? ? link_to(back_report.user.nickname, user_path(back_report.user)) : "不明" %><br>

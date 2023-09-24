@@ -1,0 +1,32 @@
+<h1>振り返りレポート詳細</h1>
+
+<div class="report">
+  <div class="form-container">
+    <%= form_with(model: @back_report, local: true) do |form| %>
+      <div class="form-input">
+        <%= form.label :"勉強した時間" %>
+        <%= form.text_field :study_hours %>
+      </div>
+
+      <div class="form-input">
+        <%= form.label :"うまくいったこと" %>
+        <%= form.text_area :successes %>
+      </div>
+
+      <div class="form-input">
+        <%= form.label :"改善したいこと" %>
+        <%= form.text_area :improvements %>
+      </div>
+
+      <div class="form-input">
+        <%= form.label :"学習をよりよくすること" %>
+        <%= form.text_area :learning_tips %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+<footer>
+  <%= link_to "戻る", back_reports_path %>
+</footer>
