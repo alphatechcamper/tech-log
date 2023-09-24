@@ -12,7 +12,6 @@ class BackReportsController < ApplicationController
   end
 
   def create
-    
     @back_report = BackReport.new(back_report_params)
     if @back_report.save
 
@@ -34,23 +33,23 @@ class BackReportsController < ApplicationController
   end
 
   def destroy
-    back_report =  BackReport.find(params[:id])
+    back_report = BackReport.find(params[:id])
     @back_report.destroy
     redirect_to back_reports_path
   end
 
   def show
-    @back_report =  BackReport.find(params[:id])
+    @back_report = BackReport.find(params[:id])
   end
 
   def search
-    @back_reports =  BackReport.search(params[:keyword])
+    @back_reports = BackReport.search(params[:keyword])
   end
 
   private
 
   def back_report_params
-    params.require(:back_report).permit(:study_hours, :successes, 
+    params.require(:back_report).permit(:study_hours, :successes,
                                         :improvements, :learning_tips).merge(user_id: current_user.id)
   end
 
