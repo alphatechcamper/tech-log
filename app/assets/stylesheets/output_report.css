@@ -1,0 +1,71 @@
+/* 詳細画面全体のスタイル */
+.detail-container {
+  max-width: 800px; /* 詳細画面の最大幅を設定 */
+  margin: 0 auto; /* 中央寄せ */
+  padding: 20px;
+}
+
+/* タイトルのスタイル */
+.detail-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 内容のスタイル */
+.detail-content {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  background-color: beige;
+}
+
+/* リンクのスタイル */
+.detail-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.detail-link:hover {
+  text-decoration: underline;
+}
+
+
+/* トップページのスタイル */
+.h2-style1 {
+  color: #fdfbfb;
+}
+
+a {
+  text-decoration: none;
+  color: #0ac6ffab;
+}
+
+/* カテゴリ要素のスタイル */
+.report-category {
+  border: none; /* ボーダーを削除 */
+  background-color: #0078f9; /* ボタンの背景色 */
+  color: #fff; /* ボタンのテキスト色 */
+  width: 270px; /* ボタンの幅を固定サイズに設定 */
+  height: 70px; /* ボタンの高さを固定サイズに設定 */
+  margin: 3px 10px;
+  border-radius: 5px;
+  text-align: center; /* テキストを中央寄せ */
+  cursor: pointer; /* マウスカーソルをポインタに変更 */
+  transition: background-color 0.3s; /* ホバー時のアニメーション */
+  flex: 1; /* 幅を均等に分配 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ホバー時のスタイル */
+.report-category:hover {
+  background-color: #6eb3fc; /* ホバー時の背景色 */
+}
+
+.category-container {
+  display: flex; /* フレックスボックスコンテナとして表示 */
+  justify-content: center; /* 要素を中央寄せ */
+}
+

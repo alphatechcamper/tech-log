@@ -1,15 +1,15 @@
 <div class="user-profile">
-  <% if @user.present? %>
-    <p><%= current_user.nickname %>さんの投稿一覧</p>
+  <% if @nickname.present? %>
+    <p><%= @nickname %>さんの投稿一覧</p>
   <% end %>
 
   <div class="user-posts">
-  <% @posts.each do |post| %>
-  <%= render partial: "posts/post", locals: { post: post } %>
-  <% end %>
+    <% @posts.each do |post| %>
+      <%= render partial: "posts/post", locals: { post: post } %>
+    <% end %>
+  </div>
 
   <footer>
-      <a href="/">戻る</a>
+    <a href="/">戻る</a>
   </footer>
-
 </div>

@@ -36,7 +36,7 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.likes.destroy_all
 
-  # Post レコードを削除
+    # Post レコードを削除
     @post.destroy
     redirect_to posts_path
   end
@@ -48,8 +48,6 @@ class PostsController < ApplicationController
   def search
     @posts = Post.search(params[:keyword])
   end
-
-  
 
   private
 

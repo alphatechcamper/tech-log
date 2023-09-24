@@ -1,0 +1,33 @@
+<%= stylesheet_link_tag 'back_report.css', media: 'all' %>
+
+<h1>振り返りレポート一覧</h1>
+
+<ul>
+  <% @back_reports.each do |back_report| %>
+    <li class="report-summary">
+      <h2>勉強時間: <%= back_report.study_hours %> 時間</h2>
+      <p>【うまくいったこと】</p>
+        <p> <%= truncate(back_report.successes, length: 10) %></p>
+      <p>【改善したいこと】</p>
+        <p><%= truncate(back_report.improvements, length: 10) %></p>
+      <p>
+      <p>【学習をよりよくする方法】</p> 
+        <p><%= truncate(back_report.learning_tips, length: 10) %></p>
+      <span>
+        <small>
+          投稿者: <%= back_report.user.present? ? link_to(back_report.user.nickname, user_path(back_report.user)) : "不明" %><br>
+          <%= l back_report.created_at %>
+        </small>
+      </span>
+  
+      <div class="edit-delete-wrapper"> 
+        <%= link_to "詳細を表示", back_report_path(back_report), class: "link-show-button" %>
+        
+        <% if user_signed_in? && current_user.id == back_report.user_id %>
+          <%= link_to "編集", edit_back_report_path(back_report), class: "link-button" %>
+          <%= button_to "削除", back_report_path(back_report), { method: :delete, class: "link-delete-button", data: { turbo_confirm: "本当に削除しますか？" } }  %> 
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>

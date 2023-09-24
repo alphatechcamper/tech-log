@@ -46,8 +46,6 @@ class OutputReportsController < ApplicationController
     @reports = Outputreport.search(params[:keyword])
   end
 
-  
-
   private
 
   def report_params
