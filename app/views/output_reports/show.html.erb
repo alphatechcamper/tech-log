@@ -1,15 +1,11 @@
+<%= stylesheet_link_tag 'output_report.css', media: 'all' %>
 
-
-<div class="report">
-       <div class="report-title">
-          <h2><%= @report.title %></h2>
-        </div>
-        <div class="report-content">
-          <p><%= @report.content %></p>
-        </div>
-    
-    <footer>
-      <a href="/output_reports">戻る</a>
-    </footer>
+<!-- views/reports/show.html.erb -->
+<div class="detail-container">
+  <h1 class="detail-title"><%= @report.title %></h1>
+  <p class="detail-content"><%= @report.content %></p>
+  
+  <div class="detail-button-container">
+    <%= link_to "戻る", output_reports_path, class: "detail-link" %>
+  </div>
 </div>
-

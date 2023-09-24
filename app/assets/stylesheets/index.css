@@ -12,7 +12,7 @@ a {
 /* カテゴリ要素のスタイル */
 .report-category {
   border: none; /* ボーダーを削除 */
-  background-color: #0078f9; /* ボタンの背景色 */
+  background-color: rgb(137, 138, 139); /* ボタンの背景色 */
   color: #fff; /* ボタンのテキスト色 */
   width: 270px; /* ボタンの幅を固定サイズに設定 */
   height: 70px; /* ボタンの高さを固定サイズに設定 */
@@ -32,4 +32,11 @@ a {
 .category-container {
   display: flex; /* フレックスボックスコンテナとして表示 */
   /* justify-content: space-between; 要素を等間隔で配置 */
+}
+
+/* 学習開始の投稿内容 */
+.contents.row {
+  display: flex;
+  align-items: flex-start; /* 左寄せに配置 */
+  margin-left: 100px;
 }
