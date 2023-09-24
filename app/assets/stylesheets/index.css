@@ -14,12 +14,14 @@ a {
   border: none; /* ボーダーを削除 */
   background-color: #0078f9; /* ボタンの背景色 */
   color: #fff; /* ボタンのテキスト色 */
-  padding: 20px;
+  width: 270px; /* ボタンの幅を固定サイズに設定 */
+  height: 70px; /* ボタンの高さを固定サイズに設定 */
   margin: 10px;
   border-radius: 5px;
   text-align: center; /* テキストを中央寄せ */
   cursor: pointer; /* マウスカーソルをポインタに変更 */
   transition: background-color 0.3s; /* ホバー時のアニメーション */
+  flex: 1; /* 幅を均等に分配 */
 }
 
 /* ホバー時のスタイル */
@@ -27,8 +29,7 @@ a {
   background-color: #6eb3fc; /* ホバー時の背景色 */
 }
 
-
 .category-container {
   display: flex; /* フレックスボックスコンテナとして表示 */
-  justify-content: space-between; /* 要素を等間隔で配置 */
+  /* justify-content: space-between; 要素を等間隔で配置 */
 }
